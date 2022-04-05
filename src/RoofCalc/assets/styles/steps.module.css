@@ -1,0 +1,33 @@
+.step {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.step.showed .headerText{
+    color: var(--black-color);;
+}
+.step.showed .headerBtn{
+    background-image: url('../images/icons/btns/minus.svg');
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.headerText {
+    font-size: 1.3rem;
+    color: #CCCCCC;
+    transition: .3s;
+}
+
+.headerBtn {
+    width: 1.6rem;
+    height: 1.6rem;
+    border: 0;
+    background: transparent url('../images/icons/btns/plus.svg');
+    background-size: contain;
+}

@@ -1,0 +1,42 @@
+.selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20%;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    gap: 10%;
+    aspect-ratio: 1;
+    transition: .2s ease;
+}
+
+.item:hover {
+    background: #f6f6f6;
+}
+
+.item.active {
+    background: #F2F2F2;
+}
+
+.itemTitle {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.itemImage {
+    width: 65%;
+}
+
+@media (max-width: 1000px) {
+    .item {
+        width: 28%;
+        gap: 10%;
+        aspect-ratio: 1;
+    }
+}
