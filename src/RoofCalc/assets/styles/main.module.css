@@ -37,6 +37,7 @@ html {
 
 .main {
     --black-color: #1A1A1A;
+    --whiteblue-color: #E1E8F0;
 }
 
 .main {
@@ -73,16 +74,21 @@ html {
 .steps {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     height: fit-content;
     overflow-y: auto;
     margin: 2rem 0;
+    gap: 2rem;
 }
 
 button {
     cursor: pointer;
     background: transparent;
-    border: 0;
+    border: 2px solid transparent;
+}
+
+button:focus {
+    outline: none;
+    border-color: var(--whiteblue-color);
 }
 
 .stepBtn {
@@ -90,11 +96,18 @@ button {
     color: white;
     padding: 1.6rem;
     border-radius: 100px;
+    font-size: 1rem;
     transition: .2s ease-in-out;
 }
 
 .stepBtn:hover {
     background: var(--black-color);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 @media (orientation: portrait) {

@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import typeStepStyle from '../../assets/styles/typeStepStyle.module.css'
 
-const TypeStep = ({changePreview}) => {
+const TypeStep = ({changePreview, returnData}) => {
     const items = []
 
     const titles = [
@@ -33,16 +33,20 @@ const TypeStep = ({changePreview}) => {
         const image = require('../../assets/images/icons/select/' + title.main + '.svg')
         items.push({name: title.main, displayName: title.display, image: image})
     })
+    
+    useEffect(() => {
+        returnData({roofType: activeItem})
+    }, [activeItem, returnData])
 
     return (
         <div className={typeStepStyle.selector}>
             {items.map((item, key) =>
                 <button
                     key={key}
-                    className={typeStepStyle.item + ' ' + (activeItem === key ? typeStepStyle.active : '')}
+                    className={typeStepStyle.item + ' ' + (activeItem === items[key].name ? typeStepStyle.active : '')}
                     onClick={
                         () => {
-                            setActiveItem(key)
+                            setActiveItem(items[key].name)
                             changePreview(item.name)
                         }
                     }

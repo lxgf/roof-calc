@@ -3,6 +3,7 @@ import mainStyle from '../assets/styles/main.module.css'
 import requirePreviews from "../assets/scripts/requirePreviews";
 import Step from "./Step";
 import TypeStep from "./Steps/TypeStep";
+import SizeStep from "./Steps/SizeStep";
 
 const Main = () => {
     const previews = requirePreviews()
@@ -16,6 +17,16 @@ const Main = () => {
 
     let index = 0
 
+    const [allData, setAllData] = useState({})
+
+    const addData = data => {
+        let newData = {...allData}
+        for (const [key, value] of Object.entries(data)) {
+            newData[key] = value
+        }
+        setAllData(newData)
+    }
+
     return (
         <div className={mainStyle.container}>
             <main className={mainStyle.main}>
@@ -24,12 +35,12 @@ const Main = () => {
                         Калькулятор кровли
                     </div>
                     <div className={mainStyle.steps}>
-                        <Step index={index++} setStep={setStep} isShowed={step === index-1}>
-                            <TypeStep changePreview={setActivePreview} />
+                        <Step index={index++} title={'Выберите тип кровли'} setStep={setStep} isShowed={step === index-1}>
+                            <TypeStep changePreview={setActivePreview} returnData={addData} />
                         </Step>
 
-                        <Step index={index++} setStep={setStep} isShowed={step === index-1}>
-                            <TypeStep changePreview={setActivePreview} />
+                        <Step index={index++} title={'Введите размеры для рассёта'} setStep={setStep} isShowed={step === index-1}>
+                            <SizeStep changePreview={setActivePreview} returnData={addData} />
                         </Step>
                     </div>
                     {

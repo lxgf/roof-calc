@@ -1,9 +1,7 @@
 import React from 'react';
 import stepsStyle from '../assets/styles/steps.module.css'
 
-const Step = ({index, isShowed, children, setStep}) => {
-    const title = 'Выберите тип кровли'
-
+const Step = ({index, isShowed, title, children, setStep}) => {
     return (
         <div className={stepsStyle.step + ' ' + (isShowed ? stepsStyle.showed : '')}>
             <button
