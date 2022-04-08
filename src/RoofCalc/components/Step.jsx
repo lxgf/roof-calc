@@ -18,7 +18,9 @@ const Step = ({index, isShowed, title, children, setStep}) => {
                 </p>
                 <div className={stepsStyle.headerBtn} />
             </button>
-            {isShowed && children}
+            <div className={stepsStyle.hidingArea + ' ' + (isShowed ? stepsStyle.showed : '')}>
+                {children}
+            </div>
         </div>
     );
 };

@@ -43,10 +43,10 @@ const TypeStep = ({changePreview, returnData}) => {
             {items.map((item, key) =>
                 <button
                     key={key}
-                    className={typeStepStyle.item + ' ' + (activeItem === items[key].name ? typeStepStyle.active : '')}
+                    className={typeStepStyle.item + ' ' + (activeItem === item.name ? typeStepStyle.active : '')}
                     onClick={
                         () => {
-                            setActiveItem(items[key].name)
+                            setActiveItem(item.name)
                             changePreview(item.name)
                         }
                     }

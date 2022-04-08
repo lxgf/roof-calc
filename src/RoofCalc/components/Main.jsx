@@ -4,6 +4,8 @@ import requirePreviews from "../assets/scripts/requirePreviews";
 import Step from "./Step";
 import TypeStep from "./Steps/TypeStep";
 import SizeStep from "./Steps/SizeStep";
+import ColoStep from "./Steps/ColorStep";
+import TotalStep from "./Steps/TotalStep";
 
 const Main = () => {
     const previews = requirePreviews()
@@ -32,17 +34,28 @@ const Main = () => {
             <main className={mainStyle.main}>
                 <div className={mainStyle.firstPart}>
                     <div className={mainStyle.title}>
-                        Калькулятор кровли
+                        {step !== 'total' ? <>Калькулятор кровли</> : <>Общая стоимость</>}
                     </div>
-                    <div className={mainStyle.steps}>
-                        <Step index={index++} title={'Выберите тип кровли'} setStep={setStep} isShowed={step === index-1}>
-                            <TypeStep changePreview={setActivePreview} returnData={addData} />
-                        </Step>
+                        <div className={mainStyle.steps}>
+                            {
+                                step === 'total' ?
+                                    <TotalStep data={allData} />
+                                    :
+                                    <>
+                                        <Step index={index++} title={'Выберите тип кровли'} setStep={setStep} isShowed={step === index-1}>
+                                            <TypeStep changePreview={setActivePreview} returnData={addData} />
+                                        </Step>
 
-                        <Step index={index++} title={'Введите размеры для рассёта'} setStep={setStep} isShowed={step === index-1}>
-                            <SizeStep changePreview={setActivePreview} returnData={addData} />
-                        </Step>
-                    </div>
+                                        <Step index={index++} title={'Введите размеры для рассёта'} setStep={setStep} isShowed={step === index-1}>
+                                            <SizeStep changePreview={setActivePreview} returnData={addData} />
+                                        </Step>
+
+                                        <Step index={index++} title={'Выберите цвет кровли'} setStep={setStep} isShowed={step === index-1}>
+                                            <ColoStep changePreview={setActivePreview} returnData={addData} />
+                                        </Step>
+                                    </>
+                            }
+                        </div>
                     {
                         typeof step === 'number' &&
                             <button
@@ -50,7 +63,8 @@ const Main = () => {
                                 onClick={
                                     () => {
                                         if (step+1 === index)
-                                            alert('final')
+                                            setStep('total')
+                                            // alert(JSON.stringify(allData))
                                         else
                                             setStep(prevState => (prevState+1))
                                     }
@@ -66,7 +80,10 @@ const Main = () => {
                     }
                 </div>
                 <div className={mainStyle.secondPart}>
-                    <img className={mainStyle.preview} src={getPreviewPath(activePreview)} alt="preview"/>
+                    <img
+                        className={mainStyle.preview}
+                        src={getPreviewPath(activePreview)}
+                        alt="preview"/>
                 </div>
             </main>
         </div>

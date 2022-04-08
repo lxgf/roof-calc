@@ -1,0 +1,48 @@
+.main {
+    display: grid;
+    width: 90%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.color {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 2rem;
+    border: 2px solid transparent;
+    transition: .2s ease;
+}
+
+.colorIcon {
+    width: 100%;
+    height: 3rem;
+    border-radius: 100px;
+    transition: .2s ease;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.color:focus {
+    border-color: var(--whiteblue-color);
+}
+
+.color:hover {
+    background: #F6F6F6FF;
+}
+
+.color.active {
+    background: #F2F2F2;
+}
+
+
+.colorName {
+    font-size: 1rem;
+}
+
+.colorHex {
+    font-size: .9rem;
+    color: #999999;
+}

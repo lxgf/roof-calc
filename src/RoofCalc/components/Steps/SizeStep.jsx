@@ -31,10 +31,15 @@ const SizeStep = ({changePreview, returnData}) => {
                                    }))
                                 }
                                 onFocus={
-                                    () => setSideStatuses(prevState => [true, prevState[1]])
+                                    () => {
+                                        setSideStatuses(prevState => [true, prevState[1]])
+                                        changePreview('width')
+                                    }
                                 }
                                onBlur={
-                                   () => setSideStatuses(prevState => [false, prevState[1]])
+                                   () => {
+                                       setSideStatuses(prevState => [false, prevState[1]])
+                                   }
                                }
                             />
                         </p>
@@ -55,10 +60,15 @@ const SizeStep = ({changePreview, returnData}) => {
                                        }))
                                    }
                                    onFocus={
-                                       () => setSideStatuses(prevState => [prevState[0], true])
+                                       () => {
+                                           setSideStatuses(prevState => [prevState[0], true])
+                                           changePreview('length')
+                                       }
                                    }
                                    onBlur={
-                                       () => setSideStatuses(prevState => [prevState[0], false])
+                                       () => {
+                                           setSideStatuses(prevState => [prevState[0], false])
+                                       }
                                    }
                             />
                         </p>

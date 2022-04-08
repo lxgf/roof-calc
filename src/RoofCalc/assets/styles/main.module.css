@@ -38,6 +38,7 @@ html {
 .main {
     --black-color: #1A1A1A;
     --whiteblue-color: #E1E8F0;
+    --blue-color: #004394;
 }
 
 .main {
@@ -92,7 +93,7 @@ button:focus {
 }
 
 .stepBtn {
-    background: #004394;
+    background: var(--blue-color);
     color: white;
     padding: 1.6rem;
     border-radius: 100px;
@@ -133,6 +134,13 @@ input::-webkit-inner-spin-button {
     .preview {
         width: 100%;
         max-height: unset;
+    }
+
+    .stepBtn {
+        position: fixed;
+        z-index: 10;
+        bottom: 3%;
+        right: 3%;
     }
 }
 

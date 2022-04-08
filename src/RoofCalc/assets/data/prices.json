@@ -1,0 +1,51 @@
+[
+  {
+    "name": "gable",
+    "price": 4000
+  },
+  {
+    "name": "marquee",
+    "price": 6000
+  },
+  {
+    "name": "mansard",
+    "price": 7000
+  },
+  {
+    "name": "valma",
+    "price": 6500
+  },
+  {
+    "name": "with-window",
+    "price": 4500
+  },
+
+  {
+    "name": "light-blue",
+    "price": 2000
+  },
+  {
+    "name": "white",
+    "price": 0
+  },
+  {
+    "name": "yellow",
+    "price": 2000
+  },
+  {
+    "name": "green",
+    "price": 2000
+  },
+  {
+    "name": "red",
+    "price": 2000
+  },
+  {
+    "name": "orange",
+    "price": 2000
+  },
+  {
+    "name": "black",
+    "price": 0
+  }
+]

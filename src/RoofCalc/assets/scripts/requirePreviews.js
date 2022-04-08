@@ -4,7 +4,16 @@ const titles = [
     'marquee',
     'mansard',
     'valma',
-    'with-window'
+    'with-window',
+    'width',
+    'length',
+    'light-blue',
+    'white',
+    'yellow',
+    'green',
+    'red',
+    'orange',
+    'black'
 ]
 
 const images = []

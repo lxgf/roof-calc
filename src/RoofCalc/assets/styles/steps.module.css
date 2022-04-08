@@ -31,3 +31,11 @@
     background: transparent url('../images/icons/btns/plus.svg');
     background-size: contain;
 }
+
+.hidingArea {
+    display: none;
+}
+
+.hidingArea.showed {
+    display: flex;
+}
